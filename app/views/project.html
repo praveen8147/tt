@@ -1,0 +1,49 @@
+<a href="./#/projects">&lt- Back to projects list</a>
+<section id="main">
+  <nav id="secondary" class="main-nav col-md-3">
+    <div class="project-picture">
+      <div class="avatar">
+       
+       <lable>Project Name : </lable> <b>{{project.ProjectName}}</b><br>
+        <lable>Status : </lable> <b>{{project.Status}}</b> <br>
+        <lable>Description : </lable><b>{{project.Description}}</b> <br>
+       <lable>Team Size : </lable> <b>{{project.TeamSize}}</b> <br>
+      </div>
+    </div>
+    
+  </nav>
+
+  <div class="main-content col-md-9">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr><th colspan="5">Project Details</th></tr>
+      </thead>
+      <tbody>
+      <b><tr><td>Name</td> <td>Status</td> <td>Description</td> <td>TeamSize</td></b>
+        </tr>
+        <tr>
+          <td>{{project.ProjectName}}</td> <td>{{project.Status}}</td> <td>{{project.Description}}</td> <td>{{project.TeamSize}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr><th colspan="5">All Project</th></tr>
+      </thead>
+      <tbody>
+    
+        <tr ng-repeat="project in projectList | filter: searchFilter">
+    <td>{{$index + 1}}</td>
+    <td>
+   
+      {{project.ProjectName}}
+
+  </td>
+    <td>{{project.Status}}</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
